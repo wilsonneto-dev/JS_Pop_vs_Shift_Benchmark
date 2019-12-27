@@ -1,0 +1,41 @@
+<script>
+  const qtdElements = Math.pow(10, 4);
+  console.log(`número de elementos para o teste: ${qtdElements}`);
+
+  const testArrayGenerate = function() {
+    var _results;
+    _results = [];
+    for (num = 1; num <= 10000; num++) {
+      _results.push(num);
+    }
+    return _results;
+  };
+
+  {
+    var testArray = testArrayGenerate();
+    console.time("pop");
+
+    // while (arr.pop() !== undefined) {}
+    var x;
+    while ((x = testArray.pop()) !== undefined) {
+      // nothing
+    }
+
+    console.timeEnd("pop");
+    console.log("pop end");
+  }
+
+  {
+    var testArray = testArrayGenerate();
+    console.time("shift");
+
+    // while (arr.shift() !== undefined) {}
+    var x;
+    while ((x = testArray.shift()) !== undefined) {
+      // nothing
+    }
+
+    console.timeEnd("shift");
+    console.log("shift end");
+  }
+</script>
